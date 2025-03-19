@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    <title>Register</title>
 </head>
 <style>
 * {
@@ -22,8 +22,8 @@
 }
 
 .login-form {
-    width: 350px;
-    height: 400px;
+    width: 400px;
+    height: 520px;
     background: #ffffff;
     box-shadow: -5px -5px 20px #6a6a6a, 5px 5px 20px #6a6a6a;
     border-radius: 15px;
@@ -83,14 +83,19 @@
 <body>
 
     <div class="login-wraper">
-        <form class="login-form">
+        <form class="login-form" method="post">
+            {% csrf_token %}
             <h1 class="login-form-h1">Log In</h1>
             <label class="login-form-label">Username:</label>
-            <input type="text" class="login-form-input" name="username">
+            <input type="text" class="login-form-input" name="username" required>
+            <label class="login-form-label">Last Name:</label>
+            <input type="text" class="login-form-input" name="lastName" required>
+            <label class="login-form-label">Email:</label>
+            <input type="email" class="login-form-input" name="email" required>
             <label class="login-form-label">Password:</label>
-            <input type="password" class="login-form-input" name="password">
-            <button class="login-form-button">Send</button>
-            <p class="login-form-p">don't have an accaount? <a href="#">Register</a></p>
+            <input type="password" class="login-form-input" name="password" required>
+            <button class="login-form-button" type="submit">Send</button>
+            <p class="login-form-p">allreadiy have an accaount? <a href="{{ login }}">Login</a></p>
         </form>
     </div>
 
