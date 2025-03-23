@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
+from django.contrib.auth.models import(BaseUserManager, AbstractBaseUser)
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, firstName, lastName, password=None):
@@ -35,16 +35,13 @@ class CustomUserManager(BaseUserManager):
         return user
 
 class User(AbstractBaseUser):
-    email = models.EmailField(max_length=255, unique=True)
+    email = models.EmailField(max_length=255, unique=True, blank=True)
     firstName = models.CharField(max_length=100)
     lastName = models.CharField(max_length=100)
-    is_admin = models.BooleanField(False)
-    is_active = models.BooleanField(True)
+    is_admin = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
     objects = CustomUserManager()
-
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['firstName', 'lastName']
 
     def __str__(self):
         return "{}- {}".format(self.username, self.last_name)

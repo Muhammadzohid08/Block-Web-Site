@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
-from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout, authenticate
 
 
 def login_view(request):
@@ -8,14 +8,22 @@ def login_view(request):
 
 def register_view(request):
     if request.method == 'POST':
-        email = request.GET.get('emal')
-        firstName = request.GET.get('username')
-        lastName = request.GET.get('lastName')
-        password = request.GET.get('password')
-        user = User(email=email, firstName=firstName, lastName=lastName)
-        user.set_password(password)
-        user.save()
-        return redirect('/')
+            emailField = request.POST.get('email', None)
+            firstNameField = request.POST.get('username', None)
+            lastNameField = request.POST.get('lastName', None)
+            passwordField = request.POST.get('password', None)
+
+            user = User(
+                email=emailField,
+                firstName=firstNameField,
+                lastName=lastNameField,
+            )
+
+            user.set_password(passwordField)
+            user.save()
+            return redirect('/')
+
+
     return render(request, 'register.html')
 
 def home_view(request):
