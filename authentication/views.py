@@ -4,7 +4,26 @@ from django.contrib.auth import login, logout, authenticate
 
 
 def login_view(request):
-    return render(request, 'login.html')
+    if request.user.is_authenticated:
+        return redirect('/')
+
+    
+    if request.method == "POST":
+        try:
+            username = request.POST.get("username", None)
+            password = request.POST.get("password", None)
+
+
+            user = authenticate(request, firstName=username, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect("/")
+            else:
+                return render(request, "login.html", {'error': "Username yoki parol noto‘g‘ri!"})
+        except:
+            print('error')
+    return render(request, "login.html")
 
 def register_view(request):
     if request.method == 'POST':

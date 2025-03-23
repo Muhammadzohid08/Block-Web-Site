@@ -43,6 +43,9 @@ class User(AbstractBaseUser):
 
     objects = CustomUserManager()
 
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['firstName', 'lastName']
+
     def __str__(self):
         return "{}- {}".format(self.username, self.last_name)
     
