@@ -1,11 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rasm Yuklash</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .home-wrapper {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .wrapper-navigation {
+            width: 100%;
+            height: 60px;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .upload-box {
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .upload-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        .upload-box input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .upload-box span {
+            font-size: 30px;
+        } */
+    </style>
 </head>
 <body>
-    <h1>salom</h1>
+
+    <div class="home-wrapper">
+        <div class="wrapper-navigation">
+
+        </div>
+    </div>
+
+    <!-- <div class="upload-box">
+        <img id="preview">
+        <input type="file" id="fileInput" accept="image/*">
+        <span>+</span>
+    </div> -->
+
+     <!-- <script>
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById('preview');
+                    img.src = e.target.result;
+                    img.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script> -->
+
 </body>
 </html>
