@@ -1,0 +1,19 @@
+{% block content %}
+
+<div class="w-full h-[70px] bg-neutral-100 p-5 flex justify-center items-center gap-5">
+    <h1 class="text-[25px] font-extrabold uppercase text-gray-600">Bo'ronov</h1>
+    <form class="w-[400px] h-[35px] border-[1px] border-solid border-gray-600 rounded-[10px] flex justify-center items-center px-5">
+        <input class="w-full border-none outline-none h-auto text-gray-600 text-[16px]" type="search" placeholder="Search..." required>
+        <button class="searchBTN bg-none border-none cursor-pointer" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+</div>
+
+<script>
+    let searchBTN = document.querySelector('.searchBTN')
+
+    searchBTN.addEventListener('click', () => {
+        searchBTN.style.transform = 'scale(0.9)'
+    })
+</script>
+
+{% endblock %}

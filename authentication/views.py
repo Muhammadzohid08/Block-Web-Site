@@ -45,5 +45,8 @@ def register_view(request):
 
     return render(request, 'register.html')
 
+def core_panel(request):
+    return render(request, 'index.html')
+
 def home_view(request):
     return render(request, 'home.html')

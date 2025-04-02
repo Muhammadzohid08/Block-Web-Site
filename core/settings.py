@@ -25,7 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'authentication'
+    'authentication',
+    "tailwind",
 ]
 
 MIDDLEWARE = [
@@ -37,6 +38,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+TAILWIND_APP_NAME = "authentication"  # Tailwind CSS joylashadigan app
+INTERNAL_IPS = ["127.0.0.1"]
 
 ROOT_URLCONF = 'core.urls'
 
