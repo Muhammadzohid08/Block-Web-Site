@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+}
