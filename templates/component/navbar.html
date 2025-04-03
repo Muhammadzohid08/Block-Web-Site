@@ -1,16 +1,25 @@
+{% load static %}
+
 {% block content %}
 
-<div class="w-full h-[70px] bg-neutral-100 p-5 flex justify-center items-center gap-5">
+<div class="navigation-wrapper w-full h-[70px] bg-neutral-100 p-5 flex justify-center items-center gap-20">
     <h1 class="text-[25px] font-extrabold uppercase text-gray-600">Bo'ronov</h1>
     <form class="w-[400px] h-[35px] border-[1px] border-solid border-gray-600 rounded-[10px] flex justify-center items-center px-5">
         <input class="w-full border-none outline-none h-auto text-gray-600 text-[16px]" type="search" placeholder="Search..." required>
         <button class="searchBTN bg-none border-none cursor-pointer" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
+    <div class="w-auto h-full flex justify-center items-center p-5">
+        <i style="display: none;" class="fa-solid fa-sun text-neutral-100 cursor-pointer"></i>
+        <i class="fa-solid fa-moon text-gray-600 text-[20px] cursor-pointer"></i>
+    </div>
+    <a href="#"><img class="w-13 h-13 rounded-full" src="../../static/img/profile.jpg" alt=""></a>
 </div>
 
 <script>
     let searchBTN = document.querySelector('.searchBTN')
-
+    let faMoon = document.querySelector('.fa-moon')
+    let faSun = document.querySelector('.fa-sun')
+    let natigationWrapper = document.querySelector('.navigation-wrapper')
     searchBTN.addEventListener('click', () => {
         searchBTN.style.transform = 'scale(0.9)'
     })
