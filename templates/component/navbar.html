@@ -2,20 +2,20 @@
 
 {% block content %}
 
-<div class="navigation-wrapper w-full h-[70px] bg-neutral-100 p-5 flex justify-center items-center gap-20 relative  select-none">
+<div class="navigation-wrapper fixed w-full h-[70px] bg-neutral-100 p-5 flex justify-center items-center gap-20  select-none">
     <h1 class="text-[25px] font-extrabold uppercase text-gray-600">Bo'ronov</h1>
-    <form class="w-[400px] h-[35px] border-[1px] border-solid border-gray-600 rounded-[10px] flex justify-center items-center px-5">
+    <form class="w-[400px] h-[35px] border-[1px] border-solid bg-white border-gray-600 rounded-[10px] flex justify-center items-center px-5">
         <input class="w-full border-none outline-none h-auto text-gray-600 text-[16px]" type="search" placeholder="Search..." required>
         <button class="searchBTN bg-none border-none cursor-pointer" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         <i style="margin-left: 10px !important;" class="fa-solid fa-filter cursor-pointer"></i>
     </form>
     <div class="w-[400px] h-auto top-18 absolute hidden search-wrapper">
-        <form class="searchUsername w-full h-auto border-[1px] border-solid border-gray-600 flex justify-start items-start flex-col p-5 rounded-[10px]" method="post">
+        <form class="searchUsername w-full h-auto border-[1px] bg-white border-solid border-gray-600 flex justify-start items-start flex-col p-5 rounded-[10px]" method="post">
             <label class="font-normal text-gray-600 cursor-pointer text-[18px]">Search with Username</label>
             <input class="w-full border-[1px] border-solid border-gray-600 p-2 rounded-[10px] outline-none hidden" style="margin-top: 10px;" type="text" name="searchUsername" required placeholder="Search Username...">
             <button type="submit" class="w-full border-[1.5px] border-solid border-gray-600 py-1 rounded-[5px] cursor-pointer hidden" style="margin-top: 10px;">Search</button>
         </form>
-        <form class="searchHashtage w-full h-auto border-[1px] border-solid border-gray-600 flex justify-start items-start flex-col p-5 rounded-[10px]" method="post">
+        <form class="searchHashtage w-full h-auto border-[1px] bg-white border-solid border-gray-600 flex justify-start items-start flex-col p-5 rounded-[10px]" method="post">
             <label class="font-normal text-gray-600 cursor-pointer text-[18px]">Search with #</label>
             <input class="w-full border-[1px] border-solid border-gray-600 p-2 rounded-[10px] outline-none hidden" style="margin-top: 10px;" type="text" name="searchHashtage" required placeholder="Search Hashtage...">
             <button type="submit" class="w-full border-[1.5px] border-solid border-gray-600 py-1 rounded-[5px] cursor-pointer hidden" style="margin-top: 10px;">Search</button>

@@ -49,4 +49,9 @@ def core_panel(request):
     return render(request, 'index.html')
 
 def home_view(request):
-    return render(request, 'home.html')
+    
+    return render(request, 'home.html',)
+
+def postView(request):
+    post = Post.objects.all()
+    return redirect(request, 'post.html',  {"post": post})

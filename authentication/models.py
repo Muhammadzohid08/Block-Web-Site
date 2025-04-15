@@ -63,3 +63,12 @@ class User(AbstractBaseUser):
     def is_staff(self):
         "Is the user a member of staff?"
         return self.is_admin
+
+class Post(models.Model):
+    user_info = models.ForeignKey(User, on_delete=models.CASCADE)
+    IMGpost = models.ImageField(null=True, blank=True)
+    VIDEOpost = models.FileField(upload_to='videos/', null=True,blank=True)
+    comment = models.CharField(max_length=1000)
+
+    def __int__(self):
+        return f"post egasi {self.user_info.get_username}"

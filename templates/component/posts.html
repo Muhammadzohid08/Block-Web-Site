@@ -7,12 +7,13 @@
 </head>
 <body>
     <div class="w-full h-screen flex justify-center items-center flex-col">
+      {% for x in post %}
         <div class="max-w-lg mx-auto bg-white border border-gray-300 rounded-lg overflow-hidden shadow-sm">
             <!-- Header: User info -->
             <div class="flex items-center justify-between p-4">
               <div class="flex items-center space-x-3">
                 <img src="https://via.placeholder.com/40" alt="Profile" class="w-10 h-10 rounded-full">
-                <span class="font-semibold text-sm">your username</span>
+                <span class="font-semibold text-sm">{{ x.user_info.username }}</span>
               </div>
               <div class="text-gray-500 text-xl"><i class="fa-solid fa-ellipsis"></i></div>
             </div>
@@ -47,7 +48,7 @@
               </div>
             </div>
           </div>
-
+          {% endfor %}
     </div>
 </body>
 </html>
